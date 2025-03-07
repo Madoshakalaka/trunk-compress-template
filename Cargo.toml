@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    "frontend",
+    "backend",
+]
+resolver = "3"
+
+[patch.crates-io]
+yew = {git = "https://github.com/yewstack/yew.git"}
+yew-html-ext = {git = "https://github.com/schvv31n/yew-html-ext"}
+
+[workspace.dependencies]
+yew = {git = "https://github.com/yewstack/yew.git"}
+stylist = { git = "https://github.com/WorldSEnder/stylist.git", branch="name-lint", features = ["yew_integration" ] }
+
+

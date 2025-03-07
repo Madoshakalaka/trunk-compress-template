@@ -1,0 +1,27 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.8.1"
+serve-yew = { git = "https://github.com/Madoshakalaka/trunk-compress", tag="v0.1.5"}
+tokio = { version="1.43.0" , features = ["rt-multi-thread", "macros"] }
+rust-embed = {version="8.5.0", features = ["include-exclude"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+tracing-journald = { version = "0.3.0" , optional=true}
+yew = { workspace=true, features=["ssr"] }
+anyhow = "1.0.96"
+stylist = { workspace=true, features = ["ssr"] }
+frontend = { path = "../frontend"  }
+
+
+
+[features]
+# Defines a feature named `webp` that does not enable any other features.
+journald = ["dep:tracing-journald"]
+env-filter = ["tracing-subscriber/env-filter"]
+compression = ["serve-yew/compression"]
+
+
