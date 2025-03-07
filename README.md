@@ -7,19 +7,19 @@ trunk build
 cargo r -p backend 8000
 ```
 
-with logs
+with logs:
 
 ```bash
-RUST_LOG=debug cargo r -p backend 8000
+RUST_LOG=debug cargo r -p backend -F env-filter 8000
 ```
 
-with compression
+with compression (make sure [trunk-compress](https://github.com/Madoshakalaka/trunk-compress/releases/latest) is in your PATH)
 
 ```bash
 cargo r -p backend -F compression 8000 
 ```
 
-Additionaly comes with journald logging:
+With journald logging:
 
 ```bash
 cargo build --release -F compression,journald
