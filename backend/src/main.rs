@@ -1,11 +1,9 @@
-#![feature(try_blocks)]
 
 use std::net::SocketAddr;
 
 use anyhow::Result;
 use axum::Router;
 mod yew;
-use tracing_subscriber::prelude::*;
 
 #[derive(Clone)]
 pub struct AppState;
@@ -21,6 +19,8 @@ async fn run() -> Result<()> {
     }
     #[cfg(feature = "env-filter")]
     {
+        use tracing_subscriber::prelude::*;
+
         tracing_subscriber::registry()
             .with(tracing_subscriber::fmt::layer())
             .with(tracing_subscriber::EnvFilter::from_default_env())
