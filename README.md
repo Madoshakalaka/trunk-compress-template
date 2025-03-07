@@ -16,12 +16,14 @@ RUST_LOG=debug cargo r -p backend -F env-filter 8000
 with compression (make sure [trunk-compress](https://github.com/Madoshakalaka/trunk-compress/releases/latest) is in your PATH)
 
 ```bash
+trunk build --release
 cargo r -p backend -F compression 8000 
 ```
 
 With journald logging:
 
 ```bash
+trunk build --release
 cargo build --release -F compression,journald
 ```
 
