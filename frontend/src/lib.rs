@@ -1,12 +1,9 @@
-
-
 use app::Appapp;
 use bounce::BounceRoot;
 // use http::Uri;
 use stylist::{manager::StyleManager, yew::ManagerProvider};
 use yew::{function_component, html, Html, Properties};
-
-mod app;
+pub mod app;
 
 #[function_component]
 pub fn ServerApp(props: &ServerAppProps) -> Html {
@@ -23,4 +20,3 @@ pub fn ServerApp(props: &ServerAppProps) -> Html {
 pub struct ServerAppProps {
     pub manager: StyleManager,
 }
-

@@ -1,5 +1,4 @@
-mod app;
-use app::App;
+use frontend::app::App;
 use tracing_subscriber::{fmt::format::Pretty, prelude::*};
 use tracing_web::{performance_layer, MakeWebConsoleWriter};
 
@@ -16,5 +15,5 @@ fn main() {
         .init(); // Install these as subscribers to tracing events
 
     yew::set_event_bubbling(false);
-    yew::Renderer::<App>::new().render();
+    yew::Renderer::<App>::new().hydrate();
 }
