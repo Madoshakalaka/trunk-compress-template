@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 axum = "0.8.1"
-serve-yew = { git = "https://github.com/Madoshakalaka/trunk-compress", tag="v0.1.5"}
+serve-yew = { git = "https://github.com/Madoshakalaka/trunk-compress", tag="v0.1.6"}
 tokio = { version="1.43.0" , features = ["rt-multi-thread", "macros"] }
 rust-embed = {version="8.5.0", features = ["include-exclude"] }
 tracing = "0.1.41"
@@ -23,5 +23,6 @@ frontend = { path = "../frontend"  }
 journald = ["dep:tracing-journald"]
 env-filter = ["tracing-subscriber/env-filter"]
 compression = ["serve-yew/compression"]
+dev-reload = ["serve-yew/dev-reload"]
 
 
